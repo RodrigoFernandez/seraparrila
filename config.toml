@@ -1,0 +1,96 @@
+baseURL = "http://example.org/"
+languageCode = "es"
+title = "Será Parrila"
+
+theme = "navigator-hugo"
+
+# Multilangues setup
+# Renders the default content language in subdir, e.g. /en/. The root directory / will redirect to /en/
+defaultContentLanguageInSubdir = true
+DefaultContentLanguage = "es"
+
+# Gestion des langues : FR / EN / NL / DE
+[[Params.listeLangues]]
+code = "es"
+
+[Languages]
+############ 1 - Site en FRANCAIS
+[Languages.es]
+weight = 1
+languageCode = "es"
+title = "Será Parrila"
+dateFormat = "2 January 2006"
+
+home = "Inicio"
+logo = "images/logo.png"
+menufixed = false
+
+footerDescription = "FRANCAIS Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere."
+footerServiceTitle = "Servicios"
+footerQuicklinkTitle = "Enlaces"
+footerAboutTitle = "FRANCAIS About"
+
+# About 2 Section
+[Languages.es.params.aboutSm]
+enable  = true
+title   = "Nosotros"
+description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae deleniti ipsa labore necessitatibus culpa veritatis quo accusantium, neque enim ea ad eaque iure, quas tempore velit, quibusdam dolor illo! Explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quisquam maiores iste soluta, nihil dolorem?"
+
+# Contact Section
+[Languages.es.params.contact]
+enable  = true
+topTitle= ""
+title   = "Contáctenos"
+subtitle= ""
+address = "Av. XXXXX 9999, Sarandí"
+phone   = "(54-11) 4444 5555"
+fax     = "(54-11) 4444 5556"
+facebook= "https://www.facebook.com/"
+twitter = "https://twitter.com/"
+linkedin= "https://www.linkedin.com/"
+instagram= "https://www.instagram.com/"
+mapMarker   = "images/marker.png"
+
+# Site Menus
+[menu]
+# Navbar Menus
+[[menu.nav]]
+name    = "Nuestros servicios"
+url     = "#"
+weight  = 2
+[[menu.nav]]
+name    = "Equipo"
+url     = "#"
+weight  = 3
+[[menu.nav]]
+name    = "Contacto"
+url     = "#"
+weight  = 4
+
+# Footer Service Menu
+[[menu.service]]
+name    = "Nuestros servicios"
+url     = "service"
+weight  = 1
+[[menu.service]]
+name    = "Equipo"
+url     = "service"
+weight  = 2
+[[menu.service]]
+name    = "Contacto"
+url     = "service"
+weight  = 3
+
+# Footer Quick links Menu
+[[menu.quicklink]]
+name    = "Nuestros servicios"
+url     = "about"
+weight  = 1
+[[menu.quicklink]]
+name    = "Equipo"
+url     = "about"
+weight  = 2
+[[menu.quicklink]]
+name    = "Contacto"
+url     = "about"
+weight  = 3

@@ -1,0 +1,17 @@
+enable  : true
+topTitle:
+title   : Nuestro equipo
+subtitle:
+
+member  :
+  - image         : images/team/member-1.jpg
+    name          : Vanesa
+    designation   : La Jefa
+    description   : >
+      La que pone el gancho.
+
+  - image         : images/team/member-2.jpg
+    name          : Gastón Reiris
+    designation   : CEO y Gerente de baños
+    description   : >
+      El que tiene la última palabra: "si mi amor".
