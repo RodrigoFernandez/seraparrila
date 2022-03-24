@@ -1,0 +1,33 @@
+#[about]
+#other = "Sobre"
+#[service]
+#other = "Servicio"
+#[portfolio]
+#other = "Portfolio"
+#[blog]
+#other = "Blog"
+#[contact]
+#other = "Contacto"
+
+[nosotros]
+other = "Nosotros"
+[servicios]
+other = "Servicios"
+[nuestroEquipo]
+other = "Nuestro Equipo"
+[contacto]
+other = "Contacto"
+
+#[graphicdesign]
+#other = "Graphic Design"
+#[webdesign]
+#other = "Web Design"
+#[webdevelopment]
+#other = "Web Development"
+
+#[partners]
+#other = "Partners"
+#[faqs]
+#other = "FAQ's"
+#[badges]
+#other = "Badges"

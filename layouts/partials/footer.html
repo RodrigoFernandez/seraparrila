@@ -3,11 +3,11 @@
     <div class="top-footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="col-sm-6 col-md-6 col-lg-6">
                     <h3>{{ .Site.Params.footerAboutTitle }}</h3>
                     {{ with .Site.Params.footerDescription }}<p>{{ . }}</p>{{ end }}
                 </div>
-                <div class="col-sm-3 col-md-3 col-lg-3">
+                <!--div class="col-sm-3 col-md-3 col-lg-3">
                     <h3>{{ .Site.Params.footerServiceTitle }}</h3>
                     <ul>
                         {{ range .Site.Menus.service }}
@@ -16,13 +16,14 @@
                         </li>
                         {{ end }}
                     </ul>
-                </div>
-                <div class="col-sm-3 col-md-3 col-lg-3">
+                </div-->
+                <div class="col-sm-6 col-md-6 col-lg-6">
                     <h3>{{ .Site.Params.footerQuicklinkTitle }}</h3>
                     <ul>
                         {{ range .Site.Menus.quicklink }}
                         <li>
-                            <a href="{{ .URL | absLangURL }}">{{ i18n .Name }}</a>
+                            <!--a href="{{ .URL | absLangURL }}">{{ i18n .Name }}</a-->
+                            <a href="{{ .URL }}">{{ i18n .Name }}</a>
                         </li>
                         {{ end }}
                     </ul>

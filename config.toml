@@ -23,12 +23,12 @@ dateFormat = "2 January 2006"
 
 home = "Inicio"
 logo = "images/logo.png"
-menufixed = false
+menufixed = false # indica si el encabezado queda fijo o no
 
-footerDescription = "FRANCAIS Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere."
-footerServiceTitle = "Servicios"
+footerDescription = "Servicios jurídicos y de escribanía. Servicios Parrilleros."
+#footerServiceTitle = "Servicios"
 footerQuicklinkTitle = "Enlaces"
-footerAboutTitle = "FRANCAIS About"
+footerAboutTitle = "Será Parrilla y Asociados"
 
 # About 2 Section
 [Languages.es.params.aboutSm]
@@ -44,12 +44,15 @@ title   = "Contáctenos"
 subtitle= ""
 address = "Av. XXXXX 9999, Sarandí"
 phone   = "(54-11) 4444 5555"
-fax     = "(54-11) 4444 5556"
+mail    = "email@seraparrilla.com.ar"
 facebook= "https://www.facebook.com/"
 twitter = "https://twitter.com/"
 linkedin= "https://www.linkedin.com/"
 instagram= "https://www.instagram.com/"
+whatsapp= "https://wa.me/5491156209711"
+telegram= "https://www.telegram.com/"
 mapMarker   = "images/marker.png"
+qrAgendenos= "images/contact/qr_sera_parrilla.png"
 
 # Site Menus
 [menu]
@@ -64,33 +67,31 @@ url     = "#"
 weight  = 3
 [[menu.nav]]
 name    = "Contacto"
-url     = "#"
+url     = "#contact"
 weight  = 4
 
 # Footer Service Menu
-[[menu.service]]
-name    = "Nuestros servicios"
-url     = "service"
-weight  = 1
-[[menu.service]]
-name    = "Equipo"
-url     = "service"
-weight  = 2
-[[menu.service]]
-name    = "Contacto"
-url     = "service"
-weight  = 3
+#[[menu.service]]
+#name    = "Nuestros servicios"
+#url     = "service"
+#weight  = 1
 
 # Footer Quick links Menu
 [[menu.quicklink]]
-name    = "Nuestros servicios"
-url     = "about"
+name    = "nosotros"
+url     = "#about-sm"
 weight  = 1
 [[menu.quicklink]]
-name    = "Equipo"
-url     = "about"
+name    = "servicios"
+url     = "#about"
 weight  = 2
 [[menu.quicklink]]
-name    = "Contacto"
-url     = "about"
+name    = "nuestroEquipo"
+url     = "#team"
 weight  = 3
+[[menu.quicklink]]
+name    = "contacto"
+url     = "#contact"
+weight  = 4
+
+# Listado de iconos: http://man.hubwiz.com/docset/IonIcons.docset/Contents/Resources/Documents/

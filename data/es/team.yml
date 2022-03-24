@@ -9,9 +9,14 @@ member  :
     designation   : La Jefa
     description   : >
       La que pone el gancho.
+    linkedinURL   : https://www.linkedin.com/
+    tarjetaPersonalURL: pdfs/tarjeta.pdf
+    twitterURL: https://twitter.com/
 
   - image         : images/team/gaston.jpg
     name          : Gastón Reiris
     designation   : CEO y Gerente de baños
     description   : >
       El que tiene la última palabra: "si mi amor".
+    tarjetaPersonalURL: pdfs/tarjeta.pdf
+    twitterURL: https://twitter.com/

@@ -1,0 +1,18 @@
+{{ "<!-- Fixed Navigation -->" | safeHTML }}
+{{ if .Site.Params.menufixed }}
+<section class="header navigation top-bar">
+{{ else }}
+<section class="header navigation">
+{{ end }}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
+                        <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>

@@ -15,66 +15,35 @@
             </div>
         </div>
         <div class="row">
-            {{ "<!-- Contact Details -->" | safeHTML }}
-            <!--div class="col-12 col-md-6">
-                <div class="map">
-                    <div id="map" data-lat="{{ .Site.Params.contact.mapLatitude }}" data-long="{{ .Site.Params.contact.mapLongitude }}" data-marker="{{ .Site.Params.contact.mapMarker | absURL }}"></div>
-                </div>
-            </div-->
-            {{ "<!-- Contact Form -->" | safeHTML }}
-            <div class="contact-form col-12 col-md-6 ">
-                <form id="contact-form" method="post" action="sendmail.php" role="form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
-                    </div>
-
-                    <div class="form-group">
-                        <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
-                    </div>
-
-                    <div id="mail-success" class="success">
-                        Thank you. The Mailman is on His Way :)
-                    </div>
-
-                    <div id="mail-fail" class="error">
-                        Sorry, don't know what happened. Try later :(
-                    </div>
-
-                    <div id="cf-submit">
-                        <input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-4">
+            <!--div class="col-12 col-md-4">
                 <div class="address-block contact-meta-block">
                     <i class="tf-ion-android-pin"></i>
                     <h4>Nuestra ubicación</h4>
                     {{ with .Site.Params.contact.address }}<p>{{ . | safeHTML }}</p>{{ end }}
                 </div>
-            </div>
+            </div-->
             <div class="col-12 col-md-4">
                 <div class="phone-block contact-meta-block">
                     <i class="tf-ion-ios-telephone"></i>
                     <h4>Nuestros teléfonos</h4>
                     <p>
-                         {{ with .Site.Params.contact.phone }}Oficina: {{.}} {{ end }}
-                        <br> {{ with .Site.Params.contact.fax }} Fax: {{ . }} {{ end }}
+                         {{ with .Site.Params.contact.phone }}Oficina: <a href="tel:{{.}}">{{.}}</a> {{ end }}
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="phone-block contact-meta-block">
+                    <i class="tf-ion-ios-email"></i>
+                    <h4>Nuestros e-mails</h4>
+                    <p>
+                         {{ with .Site.Params.contact.mail }}Mail: <a href="mailto:{{.}}">{{.}}</a> {{ end }}
                     </p>
                 </div>
             </div>
             <div class="col-12 col-md-4">
                 <div class="social-icons-block contact-meta-block">
-                    <i class="tf-ion-ios-contact"></i>
+                    <!--i class="tf-ion-ios-contact"></i-->
+                    <i class="tf-ion-ios-world"></i>
                     <h4>Nuestras redes</h4>
                     <ul class="list-inline social-icon">
                         {{ with .Site.Params.contact.facebook }}
@@ -98,13 +67,6 @@
                             </a>
                         </li>
                         {{ end }}
-                        {{ with .Site.Params.contact.dribbble }}
-                        <li class="list-inline-item">
-                            <a href="{{.}}">
-                                <i class="tf-ion-social-dribbble"></i>
-                            </a>
-                        </li>
-                        {{ end }}
                         {{ with .Site.Params.contact.instagram }}
                         <li class="list-inline-item">
                             <a href="{{.}}">
@@ -112,8 +74,68 @@
                             </a>
                         </li>
                         {{ end }}
+                        {{ with .Site.Params.contact.whatsapp }}
+                        <li class="list-inline-item">
+                            <a href="{{.}}">
+                                <i class="tf-ion-social-whatsapp"></i>
+                            </a>
+                        </li>
+                        {{ end }}
+                        {{ with .Site.Params.contact.telegram }}
+                        <li class="list-inline-item">
+                            <a href="{{.}}">
+                                <i class="tf-ion-paper-airplane"></i>
+                            </a>
+                        </li>
+                        {{ end }}
                     </ul>
                 </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="phone-block contact-meta-block">
+                    <i class="tf-ion-ios-contact"></i>
+                    <h4>Agéndenos</h4>
+                    <p>
+                        <img class="img-fluid" src="{{.Site.Params.contact.qrAgendenos | absURL }}" alt="agendenos">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            {{ "<!-- Contact Form -->" | safeHTML }}
+            <div class="contact-form col-12 col-md-6 ">
+                <h4>Escríbanos</h4>
+
+                <form id="contact-form" method="post" action="sendmail.php" role="form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" class="form-control" name="name" id="name">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" class="form-control" name="email" id="email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Asunto" class="form-control" name="subject" id="subject">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea rows="6" placeholder="Mensaje" class="form-control" name="message" id="message"></textarea>
+                    </div>
+
+                    <div id="mail-success" class="success">
+                        Gracias. El mensaje está en camino :)
+                    </div>
+
+                    <div id="mail-fail" class="error">
+                        Lo siento, no sabemos que ocurrió. Intente más tarde :(
+                    </div>
+
+                    <div id="cf-submit">
+                        <input type="submit" id="contact-submit" class="btn btn-transparent" value="Enviar">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
