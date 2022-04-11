@@ -65,9 +65,15 @@
 {{ "<!-- Smooth Scroll js -->" | safeHTML }}
 <script src="{{ `plugins/smooth-scroll/dist/js/smooth-scroll.min.js` | absURL }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-{{ "<!-- Main Script -->" | safeHTML }}
-{{ $script := resources.Get "js/script.js" | minify}}
-<script src="{{ $script.Permalink }}"></script>
+
+<!-- Este comentario sale 2 -->
+{{ range .Site.Params.custom_css }}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+{{ end }}
+
+{{ range .Site.Params.custom_js }}
+    <script type="text/javascript" src="{{ . | absURL }}"></script>
+{{ end }}
 
 <!-- cookie -->
 {{ if site.Params.cookies.enable }}

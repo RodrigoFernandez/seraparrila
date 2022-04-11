@@ -1,0 +1,15 @@
+
+.contact-form #enviar-contacto:hover {
+  border-color: #f0326b;
+}
+
+.contact-form #enviar-contacto {
+  border: none;
+  padding: 15px 0;
+  width: 100%;
+  margin: 0;
+  background: #f0326b;
+  color: #fff;
+  border-radius: 0;
+  cursor: pointer;
+}

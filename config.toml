@@ -30,6 +30,9 @@ footerDescription = "Servicios jurídicos y de escribanía. Servicios Parrillero
 footerQuicklinkTitle = "Enlaces"
 footerAboutTitle = "Será Parrilla y Asociados"
 
+custom_js = ["js/custom.js"]
+custom_css = ["css/custom.css"]
+
 # About 2 Section
 [Languages.es.params.aboutSm]
 enable  = true
