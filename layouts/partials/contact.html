@@ -109,19 +109,19 @@
 
                 <form id="contact-form" method="post" action="{{.Site.Params.contact.googleForms}}" role="form">
                     <div class="form-group">
-                        <input type="text" placeholder="Nombre" class="form-control" name="entry.2065854519" id="nombre">
+                        <input type="text" placeholder="Nombre" class="form-control" name="{{.Site.Params.contact.nombreCampo}}" id="nombre">
                     </div>
 
                     <div class="form-group">
-                        <input type="email" placeholder="Email" class="form-control" name="entry.392288742" id="email">
+                        <input type="email" placeholder="Email" class="form-control" name="{{.Site.Params.contact.emailCampo}}" id="email">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" placeholder="Asunto" class="form-control" name="entry.1211512895" id="asunto">
+                        <input type="text" placeholder="Asunto" class="form-control" name="{{.Site.Params.contact.asuntoCampo}}" id="asunto">
                     </div>
 
                     <div class="form-group">
-                        <textarea rows="6" placeholder="Mensaje" class="form-control" name="entry.1531759109" id="mensaje"></textarea>
+                        <textarea rows="6" placeholder="Mensaje" class="form-control" name="{{.Site.Params.contact.mensajeCampo}}" id="mensaje"></textarea>
                     </div>
 
                     <div id="mail-success" class="success">

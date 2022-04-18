@@ -58,6 +58,10 @@ telegram= "https://www.telegram.com/"
 mapMarker   = "images/marker.png"
 qrAgendenos= "images/contact/qr_sera_parrilla.png"
 googleForms= "https://docs.google.com/forms/u/0/d/e/1FAIpQLScW8or0XIykpyRDqhZJegVtaPJneus1AYKwEsNk4AhiYdR_uQ/formResponse"
+nombreCampo= "entry.2065854519"
+emailCampo= "entry.392288742"
+asuntoCampo= "entry.1211512895"
+mensajeCampo= "entry.1531759109"
 
 # Site Menus
 [menu]
@@ -100,17 +104,3 @@ url     = "#contact"
 weight  = 4
 
 # Listado de iconos: http://man.hubwiz.com/docset/IonIcons.docset/Contents/Resources/Documents/
-
-#[server]
-#
-#  [[server.headers]]
-#  for = "/"
-#
-#    [server.headers.values]
-#    X-Frame-Options = "DENY"
-#    X-XSS-Protection = "1; mode=block"
-#    X-Content-Type-Options = "nosniff"
-#    Referrer-Policy = "strict-origin-when-cross-origin"
-#    Feature-Policy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
-#    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-#    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' www.google-analytics.com maps.googleapis.com; img-src 'self' www.google-analytics.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com fonts.googleapis.com; form-action 'self';"

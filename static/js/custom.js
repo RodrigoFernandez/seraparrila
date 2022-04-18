@@ -134,32 +134,7 @@ $(window).on("load", function () {
         The only difference from these checks is the email checking, we have
         email.indexOf('@') which checks if there is @ in the email input field.
         This JavaScript function will return -1 if no occurrence have been found.*/
-        /*
-        if (name.length == 0) {
-            var error = true;
-            $('#nombre').css("border-color", "#D8000C");
-        } else {
-            $('#nombre').css("border-color", "#666");
-        }
-        if (email.length == 0 || email.indexOf('@') == '-1') {
-            var error = true;
-            $('#email').css("border-color", "#D8000C");
-        } else {
-            $('#email').css("border-color", "#666");
-        }
-        if (subject.length == 0) {
-            var error = true;
-            $('#asunto').css("border-color", "#D8000C");
-        } else {
-            $('#asunto').css("border-color", "#666");
-        }
-        if (message.length == 0) {
-            var error = true;
-            $('#mensaje').css("border-color", "#D8000C");
-        } else {
-            $('#mensaje').css("border-color", "#666");
-        }
-        */
+        
         error = validarCampo(name.length == 0, 'nombre')
         error = validarCampo(email.length == 0 || email.indexOf('@') == '-1', 'email')
         error = validarCampo(subject.length == 0, 'asunto')
