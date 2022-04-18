@@ -3,6 +3,7 @@
 /* ========================================================================= */
 
 $(window).on("load", function () {
+    $('#contact-form').trigger('reset');
     $('#preloader').fadeOut('slow', function () {
         $(this).remove();
     });
@@ -104,8 +105,6 @@ $(window).on("load", function () {
     /* ========================================================================= */
     /*   Contact Form Validating
     /* ========================================================================= */
-
-
     $('#enviar-contacto').click(function (e) {
 
         //stop the form from being submitted
@@ -119,6 +118,11 @@ $(window).on("load", function () {
         var subject = $('#asunto').val();
         var message = $('#mensaje').val();
 
+        let validarCampo = function(test, nombreCampo){
+            $('#' + nombreCampo).css("border-color", test ? "#D8000C" : "#666");
+            return test;
+        };
+
         /* in the next section we do the checking by using VARIABLE.length
         where VARIABLE is the variable we are checking (like name, email),
         length is a JavaScript function to get the number of characters.
@@ -130,6 +134,7 @@ $(window).on("load", function () {
         The only difference from these checks is the email checking, we have
         email.indexOf('@') which checks if there is @ in the email input field.
         This JavaScript function will return -1 if no occurrence have been found.*/
+        /*
         if (name.length == 0) {
             var error = true;
             $('#nombre').css("border-color", "#D8000C");
@@ -154,6 +159,11 @@ $(window).on("load", function () {
         } else {
             $('#mensaje').css("border-color", "#666");
         }
+        */
+        error = validarCampo(name.length == 0, 'nombre')
+        error = validarCampo(email.length == 0 || email.indexOf('@') == '-1', 'email')
+        error = validarCampo(subject.length == 0, 'asunto')
+        error = validarCampo(message.length == 0, 'mensaje')
 
         //now when the validation is done we check if the error variable is false (no errors)
         if (error == false) {
@@ -164,21 +174,32 @@ $(window).on("load", function () {
                 'value': 'Enviando...'
             });
 
+            let submitOk = function(data) {
+                //success
+                //if the mail is sent remove the submit paragraph
+                $('#cf-submit').remove();
+                //and show the mail success div with fadeIn
+                $('#mail-success').fadeIn(500);
+            };
+
             /* using the jquery's post(ajax) function and a lifesaver
             function serialize() which gets all the data from the form
-            we submit it to send_email.php */
-            $.post($("#contact-form").attr('action'), $("#contact-form").serialize(), function (result) {
-                //and after the ajax request ends we check the text returned
-                if (result == 'sent') {
-                    //if the mail is sent remove the submit paragraph
-                    $('#cf-submit').remove();
-                    //and show the mail success div with fadeIn
-                    $('#mail-success').fadeIn(500);
-                } else {
+            we submit it */
+            $.ajax({
+                url: $("#contact-form").attr('action'),     //The public Google Form url, but replace /view with /formResponse
+                data: $("#contact-form").serialize(), //Nifty jquery function that gets all the input data
+                type: 'POST', //tells ajax to post the data to the url
+                dataType: "json", //the standard data type for most ajax requests
+                statusCode: { //the status code from the POST request
+                  0: submitOk, //0 is when Google gives a CORS error, don't worry it went through
+                  200: submitOk, //200 is a success code. it went through!
+                  403: function(data) {//403 is when something went wrong and the submission didn't go through
+                    //error
                     //show the mail failed div
                     $('#mail-fail').fadeIn(500);
                     //re enable the submit button by removing attribute disabled and change the text back to Send The Message
                     $('#enviar-contacto').removeAttr('disabled').attr('value', 'Enviar');
+                  }
                 }
             });
         }
